@@ -137,6 +137,35 @@ void quickSort(int *a, int l, int r){
 /************/
 
 
+/*Heap Sort*/
+void heapify(int *a, int i, int n){
+    int l = 2*i + 1;
+    int r = 2*i + 2;
+    int tmp = i;
+    if(l<n && a[tmp] < a[l]){
+        tmp = l;
+    }
+    if(r<n && a[tmp] < a[r]){
+        tmp = r;
+    }
+    if(tmp != i){
+        swap(a[i],a[tmp]);
+        heapify(a,tmp,n);
+    }
+}
+void buildheap(int *a, int n){
+    for(int i = n/2-1; i >=0; i--){
+        heapify(a,i,n);
+    }
+}
+void heapSort(int *a, int n){
+    buildheap(a,n);
+    for(int i = n-1; i > 0; i--){
+        swap(a[0],a[i]);
+        heapify(a,0,i-1);
+    }
+}
+/************/
 int main(){
     int n;
     cin >> n;
