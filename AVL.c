@@ -116,5 +116,5 @@ int main(){
         p = AVLTree(p);
     }
     // BNS đã được chuyển thành AVL 
-    // nếu thực hiện xóa, cứ xóa BNS trước rồi sắp xếp lại sau 
+    // nếu thực hiện xóa, cứ xóa BNS trước rồi chuyển về AVL sau
 }
