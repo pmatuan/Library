@@ -131,4 +131,9 @@ int treeLevel(node *t){
     if(t == NULL) return -1;
     else return 1 + max(treeLevel(t->left), treeLevel(t->right));
 }
+node *minNode(node *p){
+    node *tmp = p;
+    while(p && tmp->left!=NULL) tmp = tmp->left;
+    return tmp;
+}
 /*----------------------------------------*/
